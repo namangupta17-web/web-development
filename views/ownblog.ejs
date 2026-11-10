@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/footer.css">
+     <link rel="stylesheet" href="styles/header.css">
+      <link rel="stylesheet" href="styles/ownblog.css">
+</head>
+<header>
+    <%- include("partials/header.ejs")%>
+</header>
+<body>
+    <main class="create-blog-container">
+    <div class="form-wrapper">
+        <h2>Write a New Story</h2>
+        <p class="form-subtitle">Share your thoughts, insights, or ideas with the world.</p>
+        
+        <form action="/submit-new-blog" method="POST" class="blog-form">
+            <div class="form-group">
+                <label for="author">Author Name</label>
+                <input type="text" id="author" name="author" placeholder="e.g. Naman Gupta" required />
+            </div>
+
+            <div class="form-group">
+                <label for="title">Blog Title</label>
+                <input type="text" id="title" name="title" placeholder="Give your story a catchy title..." required />
+            </div>
+
+            <div class="form-group">
+                <label for="image">Thumbnail Image URL</label>
+                <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" />
+            </div>
+            <div class="form-group">
+                <label for="date">DD/MM/YYYY</label>
+                <input type="date" id="date" name="date" placeholder="DD/MM/YYYY" />
+            </div>
+
+            <div class="form-group">
+                <label for="excerpt">Short Description / Excerpt</label>
+                <input type="text" id="excerpt" name="excerpt" placeholder="A brief hook to interest readers on the homepage..." required />
+            </div>
+
+            <div class="form-group">
+                <label for="content">Story Content</label>
+                <textarea id="content" name="content" rows="10" placeholder="Once upon a time..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-blog-btn">Publish Blog</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+<footer>
+    <%- include("partials/footer.ejs")%>
+</footer>
+</html>
